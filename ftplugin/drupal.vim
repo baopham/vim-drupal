@@ -51,7 +51,7 @@ if &ft =~ '\<php\>'
   " attention to case. This option affects searching in files and also tag
   " searches and code completion. If you want a case-insensitive search, start
   " the pattern with '\c'.
-  setl noignorecase
+  " setl noignorecase
   " Format comment blocks.  Just type / on a new line to close.
   " Recognize // (but not #) style comments.
   setl comments=sr:/**,m:*\ ,ex:*/,://
@@ -73,14 +73,15 @@ setl nojoinspaces            "No second space when joining lines that end in "."
 setl shiftwidth=2            "Use two spaces for auto-indent
 setl smartindent             "Smart autoindenting on new line
 setl smarttab                "Respect space/tab settings
-setl tabstop=2               "Use two spaces for tabs
+setl tabstop=8
+setl softtabstop=2            "Use two spaces for tabs
 setl textwidth=80            "Limit comment lines to 80 characters.
-"  -t:  Do not apply 'textwidth' to code.
-"  +c:  Apply 'textwidth' to comments.
-"  +r:  Continue comments after hitting <Enter> in Insert mode.
-"  +o:  Continue comments after when using 'O' or 'o' to open a new line.
-"  +q:  Format comments using q<motion>.
-"  +l:  Do not break a comment line if it is long before you start.
+" "  -t:  Do not apply 'textwidth' to code.
+" "  +c:  Apply 'textwidth' to comments.
+" "  +r:  Continue comments after hitting <Enter> in Insert mode.
+" "  +o:  Continue comments after when using 'O' or 'o' to open a new line.
+" "  +q:  Format comments using q<motion>.
+" "  +l:  Do not break a comment line if it is long before you start.
 setl formatoptions-=t
 setl formatoptions+=croql
 
@@ -117,29 +118,29 @@ if strlen(b:Drupal_info.OPEN_COMMAND) " {{{
   " Lookup the API docs for a drupal function under cursor.
   nmap <Plug>DrupalAPI :silent call drupal#OpenURL('api.d.o')<CR><C-L>
   call drupal#CreateMaps('n', 'Drupal API', '<LocalLeader>da',
-	\ '<Plug>DrupalAPI', s:options)
+        \ '<Plug>DrupalAPI', s:options)
 
   " Lookup the API docs for a drupal hook under cursor.
   nmap <Plug>DrupalHook :silent call drupal#OpenURL('hook')<CR><C-L>
   call drupal#CreateMaps('n', 'Drupal Hook', '<LocalLeader>dh',
-	\ '<Plug>DrupalHook', s:options)
+        \ '<Plug>DrupalHook', s:options)
 
   " Lookup the API docs for a contrib function under cursor.
   nmap <Plug>DrupalContribAPI :silent call drupal#OpenURL('drupalcontrib')<CR><C-L>
   call drupal#CreateMaps('n', 'Drupal contrib', '<LocalLeader>dc',
-	\ '<Plug>DrupalContribAPI', s:options)
+        \ '<Plug>DrupalContribAPI', s:options)
 
   " Lookup the API docs for a drush function under cursor.
   nmap <Plug>DrushAPI :silent call drupal#OpenURL("http://api.drush.ws/api/function/")<CR><C-L>
   call drupal#CreateMaps('n', 'Drush API', '<LocalLeader>dda',
-	\ '<Plug>DrushAPI', s:options)
+        \ '<Plug>DrushAPI', s:options)
 endif " }}}
 
 " Get the value of the drupal variable under cursor.
 nnoremap <buffer> <LocalLeader>dv :execute "!drush vget ".shellescape(expand("<cword>"), 1)<CR>
   call drupal#CreateMaps('n', 'variable_get', '<LocalLeader>dv',
-	\ ':execute "!drush vget ".shellescape(expand("<cword>"), 1)<CR>',
-	\ s:options)
+        \ ':execute "!drush vget ".shellescape(expand("<cword>"), 1)<CR>',
+        \ s:options)
 
 " Tag commands.
 let s:options = {'root': 'Drupal.Tags', 'shortcut': '<C-]>', 'weight': '100.'}

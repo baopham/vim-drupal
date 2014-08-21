@@ -4,25 +4,17 @@ snippet markup
 	$form['${1:/* form element */}'] = array(
 	  '#markup' => '<${2:div}>' . '${3:/* markup */}' . '</$2>',
 	);
-
 ## Database functions
-
 snippet db_query
 	$result = db_query('${1:/* Query */}', ${2:/* Arguments */}, ${3:/* Options */});
-
 ## drupal_ functions
-
 snippet drupal_add_css
 	drupal_add_css(${1:/* Data */}, '${2:/* Options */}');
-
 snippet drupal_add_js
 	drupal_add_js(${1:/* Data */}, '${2:/* Options */}');
-
 snippet drupal_goto
 	drupal_goto('${1:path}', '${2:options}', '${3:http_response_code}');
-
 ## Hooks
-
 snippet hook_block
 	/**
 	 * Implements hook_block_info().
@@ -72,7 +64,6 @@ snippet hook_block
 	 */
 	function `Filename()`_block_view_MODULE_DELTA_alter() {
 	}
-
 snippet hook_comment
 	/**
 	 * Implements hook_comment_view().
@@ -128,7 +119,6 @@ snippet hook_comment
 	 */
 	function `Filename()`_comment_view_alter(&$build) {
 	}
-
 snippet hook_node_type
 	/**
 	 * Implements hook_node_type_delete().
@@ -148,7 +138,6 @@ snippet hook_node_type
 	 */
 	function `Filename()`_node_type_update($info) {
 	}
-
 snippet hook_permission
 	/**
 	 * Implements hook_permission().
@@ -161,7 +150,6 @@ snippet hook_permission
 	            'warning' => t('${5:/* optional */}'),
 	          ));
 	}
-
 snippet hook_requirements
 	/**
 	 * Implements hook_requirements().
@@ -193,7 +181,6 @@ snippet hook_requirements
 
 	  return $requirements;
 	}
-
 snippet hook_update_N
 	/**
 	 * Implements hook_update_N().
@@ -208,9 +195,6 @@ snippet hook_update_N
 
 	  return $ret;
 	}
-
 ## Everything else
-
 snippet t
 	t('${1:/* Your text */}', array(${2:/* arguments */}), array(${3:/* options */}))
-

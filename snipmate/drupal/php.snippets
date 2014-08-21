@@ -6,7 +6,6 @@ snippet checkbox
 	  '#title' => t('${2:/* title */}'),
 	  '#description' => t('${3:/* description */}'),
 	);
-
 snippet checkboxes
 	$form['${1:/* form element */}'] = array(
 	  '#type' => 'checkboxes',
@@ -16,14 +15,12 @@ snippet checkboxes
 	    '${4:/* key */}' => t('${5:/* value */}'),
 	  ),
 	);
-
 snippet file
 	$form['${1:/* form element */}'] = array(
 	  '#type' => 'file',
 	  '#title' => t('${2:/* title */}'),
 	  '#description' => t('${3:/* description */}'),
 	);
-
 snippet select
 	$form['${1:/* form element */}'] = array(
 	  '#type' => 'select',
@@ -33,44 +30,34 @@ snippet select
 	    '${4:/* key */}' => t('${5:/* value */}'),
 	  ),
 	);
-
 snippet submit
 	$form['${1:/* form element */}'] = array(
 	  '#type' => 'submit',
 	  '#value' => t('${2:/* value */}'),
 	);
-
 snippet textarea
 	$form['${1:/* form element */}'] = array(
 	  '#type' => 'textarea',
 	  '#title' => t('${2:/* title */}'),
 	  '#rows' => ${3:/* default:5 */},
 	);
-
 snippet textfield
 	$form['${1:/* form element */}'] = array(
 	  '#type' => 'textfield',
 	  '#title' => t('${2:/* title */}'),
 	  '#size' => ${3:/* default:60 */},
 	);
-
 ## drupal_ functions
-
 snippet drupal_get_form
 	drupal_get_form('${1:/* Form ID */}', $${2:argument});
-
 snippet drupal_get_path
 	drupal_get_path('${1:/* Type: module, theme or theme_engine */}', '${2:/* Name */}');
-
 snippet drupal_get_path_alias
 	drupal_get_path_alias('node/${1:nid}', ${2:language (optional)});
-
 # Shortcut for drupal_set_message
 snippet dsm
 	drupal_set_message('${1:message}.', '${2:status, warning, or error}', ${3:repeat (default:TRUE)});
-
 ## Hooks
-
 snippet hook_cron
 	/**
 	 * Implements hook_cron().
@@ -78,7 +65,6 @@ snippet hook_cron
 	function `Filename()`_cron() {
 	  ${1:// Your code here.}
 	}
-
 snippet hook_form_alter
 	/**
 	 * Implements hook_form_alter().
@@ -89,7 +75,6 @@ snippet hook_form_alter
 	      ${2:// your code.}
 	  }
 	}
-
 snippet hook_help
 	/**
 	 * Implements hook_help.
@@ -101,7 +86,6 @@ snippet hook_help
 	      return t('${2:/* text */}');
 	  }
 	}
-
 snippet hook_init
 	/**
 	 * Implements hook_init().
@@ -109,7 +93,6 @@ snippet hook_init
 	function `Filename()`_init() {
 	  ${1:/* your code here */}
 	}
-
 snippet hook_mail_alter
 	/**
 	 * Implements hook_mail_alter().
@@ -117,7 +100,6 @@ snippet hook_mail_alter
 	function `Filename()`_mail_alter(&$message) {
 	  ${1:// Your code here.}
 	}
-
 snippet hook_menu
 	/**
 	 * Implements hook_menu().
@@ -135,7 +117,6 @@ snippet hook_menu
 	
 	  return $$1;
 	}
-
 snippet hook_menu_alter
 	/**
 	 * Implements hook_menu_alter().
@@ -143,7 +124,6 @@ snippet hook_menu_alter
 	function `Filename()`_menu_alter(&$${1:items}) {
 	  $$1['${2:/* your code here */}']
 	}
-
 snippet hook_node_info
 	/**
 	 * Implements hook_node_info().
@@ -157,7 +137,6 @@ snippet hook_node_info
 	    ),
 	  );
 	}
-
 snippet hook_node_operations
 	/**
 	 * Implements hook_node_operations().
@@ -178,7 +157,6 @@ snippet hook_node_operations
 	function $3 {
 	  ${4:// Your code here.}
 	}
-
 snippet hook_theme
 	/**
 	 * Implements hook_theme().
@@ -191,7 +169,6 @@ snippet hook_theme
 	    ),
 	  );
 	}
-
 snippet hook_user_operations
 	/**
 	 * Implements hook_user_operations().
@@ -212,15 +189,10 @@ snippet hook_user_operations
 	function $3 {
 	  ${4:// Your code here.}
 	}
-
 ## Everything else
-
 snippet l
 	l(${1:/* text */}, ${2:/* link */})
-
 snippet url
 	url('${1:path}', array('query' => '${2:query}', 'absolute' => ${3:false}))
-
 snippet watchdog
 	watchdog('${1:/* type */}', '${2:/* message */}'${3});
-
